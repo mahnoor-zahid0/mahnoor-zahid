@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #fffaf3;
+    transition: all 0.3s ease; /* Global transition for smoothness */
 }
 
 /* Main heading (h1) and subheadings (h2) style */
@@ -18,6 +19,7 @@ h1, h2 {
     color: #000;
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    transition: color 0.3s ease; /* Transition effect for headings */
 }
 
 h1 {
@@ -35,6 +37,7 @@ p {
     font-size: 1.1rem;
     color: #555;
     margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
 }
 
 /* Centered Text */
@@ -44,31 +47,50 @@ p {
 }
 
 /* Fade-in Section */
+/* Global animation and transition settings */
 .fade-in-section {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Make sections visible */
 .visible {
     opacity: 1;
     transform: translateY(0);
 }
 
+/* Outgoing transition */
+.fade-out {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-in, transform 0.6s ease-in;
+}
+
+/* Ensure that transitions apply when both entering and leaving the viewport */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
 /* Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffdfd3;
+}
+
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: flex-end;
-    padding: 20px;
-    background-color: #ffdfd3;
     margin: 0;
-    flex-wrap: wrap;
+    padding: 0;
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin-left: 20px;
 }
 
 nav ul li a {
@@ -83,89 +105,13 @@ nav ul li a:hover {
     color: #f4a9a8;
 }
 
-/* Drawer button (Hamburger Icon) */
-.drawer-toggle {
-    display: none; /* Default hidden on larger screens */
-    font-size: 30px;
-    background: none;
-    border: none;
+/* Profile Picture in Navbar */
+.profile-pic-nav {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
     cursor: pointer;
-    margin: 20px;
-}
-
-/* Drawer navigation style */
-.drawer-nav {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Hidden off-screen */
-    width: 250px;
-    height: 100%;
-    background-color: #ffdfd3;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: left 0.3s ease;
-    padding-top: 60px; /* Adjust for header height */
-    z-index: 1000;
-}
-
-.drawer-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.drawer-nav ul li {
-    padding: 20px;
-    text-align: left;
-}
-
-.drawer-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    display: block;
-}
-
-.drawer-nav ul li a:hover {
-    color: #f4a9a8;
-}
-
-/* When drawer is open */
-.drawer-nav.open {
-    left: 0; /* Slides in */
-}
-
-/* Hide drawer on larger screens */
-@media (min-width: 768px) {
-    .drawer-toggle {
-        display: none;
-    }
-
-    .drawer-nav {
-        position: static;
-        width: auto;
-        height: auto;
-        box-shadow: none;
-        left: 0;
-    }
-
-    .drawer-nav ul {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .drawer-nav ul li {
-        padding: 0 20px;
-    }
-}
-
-/* Show drawer button on small screens */
-@media (max-width: 768px) {
-    .drawer-toggle {
-        display: block;
-    }
-
-    .drawer-nav ul {
-        display: block;
-    }
 }
 
 /* Header Section */
@@ -173,14 +119,16 @@ header {
     text-align: center;
     padding: 50px;
     background: linear-gradient(135deg, #ffe5e5, #fff3f0);
+    transition: background 0.3s ease;
 }
 
-.intro-content h1 {
+.intro-content h2 {
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     font-weight: 700;
     color: #333;
     margin-bottom: 1rem;
+    transition: color 0.3s ease;
 }
 
 .intro-content p {
@@ -188,6 +136,7 @@ header {
     font-size: 1.2rem;
     margin: 20px 0;
     color: #666;
+    transition: color 0.3s ease;
 }
 
 .btn-primary {
@@ -203,6 +152,57 @@ header {
 .btn-primary:hover {
     background-color: #ff7878;
     transform: translateY(-2px);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* How I Can Help Section */
+.how-i-can-help-section {
+    padding: 50px;
+    background-color: #fff3f0;
+    text-align: center;
+}
+
+.how-i-can-help-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.help-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Add fade-in/fade-out transition classes */
+.help-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 300px;
+    margin: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Fade-in and hover effect */
+.help-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.help-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Fade-out effect */
+.help-card.fade-out {
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 /* About Section */
@@ -217,6 +217,7 @@ header {
     font-size: 2.5rem;
     margin-bottom: 20px;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .about-section p {
@@ -225,6 +226,7 @@ header {
     font-size: 1.2rem;
     line-height: 1.6;
     text-align: center;
+    transition: color 0.3s ease;
 }
 
 .about-section img.profile-pic {
@@ -237,6 +239,7 @@ header {
 
 .about-section img.profile-pic:hover {
     transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 /* Projects Section */
@@ -251,6 +254,7 @@ header {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .projects-container {
@@ -276,6 +280,7 @@ header {
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card img {
@@ -288,6 +293,7 @@ header {
 
 .project-card img:hover {
     transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 /* Skills Section */
@@ -312,32 +318,6 @@ header {
 }
 
 .skills-section ul li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
-/* Education Section */
-.education-section {
-    padding: 50px;
-    background-color: #fff3f0;
-    text-align: center;
-}
-
-.education-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
-}
-
-.education-section ul {
-    list-style: none;
-    padding: 0;
-    display: inline-block;
-    text-align: left;
-}
-
-.education-section ul li {
     margin-bottom: 10px;
     font-size: 1.1rem;
 }
@@ -374,11 +354,17 @@ footer {
     background-color: #ffdfd3;
     padding: 20px;
     text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+footer:hover {
+    background-color: #ffe5e5;
+    transition: background-color 0.3s ease;
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    header .intro-content h1 {
+    header .intro-content h2 {
         font-size: 2.5rem;
     }
 
@@ -391,14 +377,9 @@ footer {
         gap: 20px;
     }
 
-    nav ul {
-        justify-content: center;
+    .how-i-can-help-section .help-container {
         flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
+        gap: 20px;
     }
 
     .about-section img.profile-pic {
@@ -411,14 +392,13 @@ footer {
     }
 
     .skills-section ul li,
-    .education-section ul li,
     .contact-details ul li {
         font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    header .intro-content h1 {
+    header .intro-content h2 {
         font-size: 2rem;
     }
 
@@ -439,13 +419,12 @@ footer {
         flex-direction: column;
     }
 
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
     .about-section img.profile-pic {
         width: 100px;
         height: 100px;
+    }
+
+    .how-i-can-help-section .help-container {
+        flex-direction: column;
     }
 }
