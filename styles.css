@@ -117,7 +117,6 @@ nav ul li a:hover {
 /* Header Section */
 header {
     text-align: center;
-    padding: 50px;
     background: linear-gradient(135deg, #ffe5e5, #fff3f0);
     transition: background 0.3s ease;
 }
