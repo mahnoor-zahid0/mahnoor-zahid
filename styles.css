@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Arial:wght@400&display=swap');
 
 /* Global Styles */
-/* General body styling */
 body {
     font-family: 'Arial', sans-serif;
     color: #333;
@@ -12,7 +11,7 @@ body {
     background-color: #fffaf3;
 }
 
-/* Main heading (h1) style */
+/* Main heading (h1) and subheadings (h2) style */
 h1, h2 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
@@ -22,7 +21,7 @@ h1, h2 {
     line-height: 1.2;
 }
 
-/* Subheadings (h2, h3) style */
+/* Subheadings */
 h2 {
     font-family: 'Playfair Display', serif;
     font-weight: 400;
@@ -39,20 +38,20 @@ p {
     margin-bottom: 1.5rem;
 }
 
-/* Optional: Add text alignment and spacing */
+/* Centered Text */
 .center-text {
     text-align: center;
     margin: 0 auto;
 }
 
-/* Sections default to hidden */
+/* Fade-in Section */
 .fade-in-section {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Visible sections */
+/* Make sections visible */
 .visible {
     opacity: 1;
     transform: translateY(0);
@@ -66,6 +65,7 @@ nav ul {
     padding: 20px;
     background-color: #ffdfd3;
     margin: 0;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -101,7 +101,7 @@ header {
 
 .intro-content p {
     font-family: 'Arial', sans-serif;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     margin: 20px 0;
     color: #666;
 }
@@ -138,7 +138,7 @@ header {
 .about-section p {
     max-width: 800px;
     margin: 0 auto;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     line-height: 1.6;
     text-align: center;
 }
@@ -229,7 +229,7 @@ header {
 
 .skills-section ul li {
     margin-bottom: 10px;
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
 /* Education Section */
@@ -255,7 +255,7 @@ header {
 
 .education-section ul li {
     margin-bottom: 10px;
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
 /* Contact Section */
@@ -282,7 +282,7 @@ header {
 
 .contact-details ul li {
     margin-bottom: 10px;
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
 /* Footer */
@@ -290,4 +290,78 @@ footer {
     background-color: #ffdfd3;
     padding: 20px;
     text-align: center;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header .intro-content h1 {
+        font-size: 2.5rem;
+    }
+
+    header .intro-content p {
+        font-size: 1rem;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .about-section img.profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .project-card img {
+        height: 200px;
+    }
+
+    .skills-section ul li,
+    .education-section ul li,
+    .contact-details ul li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header .intro-content h1 {
+        font-size: 2rem;
+    }
+
+    header .intro-content p {
+        font-size: 0.9rem;
+    }
+
+    .btn-primary {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .projects-container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-section img.profile-pic {
+        width: 100px;
+        height: 100px;
+    }
 }
