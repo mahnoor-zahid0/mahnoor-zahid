@@ -243,6 +243,7 @@ header {
 
 /* Projects Section */
 .projects-section {
+    padding: 50px;
     background-color: #fff3f0;
     text-align: center;
 }
