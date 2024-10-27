@@ -3,38 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahnoor Zahid Portfolio</title>
+    <title>Mahnoor Zahid</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Arial:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
     <!-- Header Section -->
     <header class="intro-section fade-in-section">
-    <nav>
-        <!-- Profile Picture -->
-        <img src="profile.jpeg" alt="Mahnoor Zahid" class="profile-pic-nav">
-        
-        <!-- Navigation Links -->
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="intro-content">
-        <h1>Hello, I'm Mahnoor Zahid</h1>
-        <p>Web & Mobile App Developer | Flutter Developer</p>
-        <a class="btn-primary" href="#projects">See My Work</a>
-    </div>
-</header>
-
-   
+        <nav>
+            <!-- Profile Picture -->
+            <img src="profile.jpeg" alt="Mahnoor Zahid" class="profile-pic-nav">
+            <!-- Navigation Links -->
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="intro-content">
+            <h1>Hello, I'm Mahnoor Zahid</h1>
+            <p>Web & Mobile App Developer | Flutter Developer</p>
+            <a class="btn-primary" href="#projects">See My Work</a>
+        </div>
+    </header>
 
     <!-- About Section -->
     <section id="about" class="about-section fade-in-section">
         <h2>About Me</h2>
-        <p>I am a passionate web and Flutter development enthusiast, ready to launch my career in the tech industry. Through hands-on learning and personal projects, I have gained proficiency in creating responsive websites and mobile applications. My skill set includes HTML, CSS, Bootstrap, JavaScript, and Dart, enabling me to bring creative designs to life. I am excited to contribute to innovative projects in web and mobile development and look forward to growing and learning in a dynamic team environment.</p>
+        <!-- Static gradient text -->
+        <p class="gradient-text">I am a passionate web and Flutter development enthusiast, ready to launch my career in the tech industry. Through hands-on learning and personal projects, I have gained proficiency in creating responsive websites and mobile applications.</p>
+        <!-- Typing effect text -->
+        <p id="typing-text"></p>
         <img src="profile.jpeg" alt="Mahnoor Zahid" class="profile-pic">
     </section>
 
@@ -68,24 +70,26 @@
             </div>
         </div>
     </section>
- <!-- How I Can Help Section -->
- <section class="how-i-can-help-section">
-    <h2>How I Can Help</h2>
-    <div class="help-container">
-        <div class="help-card">
-            <h3>Web Development</h3>
-            <p>Clean, responsive, and user-friendly web designs.</p>
+
+    <!-- How I Can Help Section -->
+    <section class="how-i-can-help-section">
+        <h2>How I Can Help</h2>
+        <div class="help-container">
+            <div class="help-card">
+                <h3>Web Development</h3>
+                <p>Clean, responsive, and user-friendly web designs.</p>
+            </div>
+            <div class="help-card">
+                <h3>Mobile Apps</h3>
+                <p>Building beautiful mobile apps with Flutter.</p>
+            </div>
+            <div class="help-card">
+                <h3>UI/UX Design</h3>
+                <p>Creating experiences that users love.</p>
+            </div>
         </div>
-        <div class="help-card">
-            <h3>Mobile Apps</h3>
-            <p>Building beautiful mobile apps with Flutter.</p>
-        </div>
-        <div class="help-card">
-            <h3>UI/UX Design</h3>
-            <p>Creating experiences that users love.</p>
-        </div>
-    </div>
-</section>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="skills-section fade-in-section">
         <h2>Skills</h2>
@@ -102,19 +106,20 @@
     <section id="contact" class="contact-section fade-in-section">
         <h2>Contact Me</h2>
         <ul class="contact-details">
-            <li><strong>Phone:</strong> +923167947578</li>
-            <li><strong>Email:</strong> mmaahh1296@gmail.com</li>
-            <li><strong>Instagram:</strong> <a href="https://instagram.com/_.moonlight_00" target="_blank">_.moonlight_00</a></li>
-            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mahnoor-zahid-22a75a264/" target="_blank">Mahnoor Zahid</a></li>
-            <li><strong>Address:</strong> Mandi Bahauddin, Pakistan</li>
+            <li><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> +923167947578</li>
+            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> mmaahh1296@gmail.com</li>
+            <li><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://instagram.com/_.moonlight_00" target="_blank">_.moonlight_00</a></li>
+            <li><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mahnoor-zahid-22a75a264/" target="_blank">Mahnoor Zahid</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Mandi Bahauddin, Pakistan</li>
         </ul>
     </section>
-
+    
     <!-- Footer Section -->
     <footer>
         <p>Contact: mmaahh1296@gmail.com | &copy; 2024 Mahnoor Zahid</p>
     </footer>
 
+    <!-- JavaScript for Typing Effect -->
     <script src="script.js"></script>
 </body>
 </html>

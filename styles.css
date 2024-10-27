@@ -137,6 +137,8 @@ header {
     color: #666;
     transition: color 0.3s ease;
 }
+/* Gradient text style */
+
 
 .btn-primary {
     background-color: #f4a9a8;
@@ -323,30 +325,41 @@ header {
 
 /* Contact Section */
 .contact-section {
+    text-align: center;
     padding: 50px;
     background-color: #ffe5e5;
-    text-align: center;
 }
 
-.contact-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+.contact-details {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block; /* Center align the list */
+    text-align: left; /* Align text within each list item */
+}
+
+.contact-details li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-details i {
+    color: #ff7e5f; /* Customize icon color */
+    margin-right: 8px;
+    font-size: 1.2rem; /* Adjust icon size */
+}
+
+.contact-details a {
+    text-decoration: none;
+    color: #333;
     font-weight: bold;
 }
 
-.contact-details ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-    text-align: left;
+.contact-details a:hover {
+    color: #ff7e5f;
 }
 
-.contact-details ul li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
 
 /* Footer */
 footer {
@@ -426,4 +439,38 @@ footer:hover {
     .how-i-can-help-section .help-container {
         flex-direction: column;
     }
+}
+
+.gradient-text {
+    font-size: 1.5rem;
+    font-weight: 900;  /* Maximum boldness */
+    margin-bottom: 1rem;
+    text-align: center;
+    
+    /* Darker and more vibrant gradient */
+    background: linear-gradient(135deg, #ff6b6b, #f08a5d, #b83b5e, #6a2c70, #355c7d, #6c5b7b, #c06c84, #f67280);
+    background-size: 200%;  /* To ensure the colors stretch nicely over the text */
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+    animation: gradientShift 10s ease infinite;
+}
+
+/* Optional animation to create a shifting gradient effect */
+@keyframes gradientShift {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+/* Centering Container */
+.centered-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;  /* Full viewport height to center vertically */
+    text-align: center;
 }
