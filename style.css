@@ -397,7 +397,6 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
 }
 
 .portfolio-section .mb-5 {
-    margin-top: 0px;
     margin-bottom: 1.5rem !important;
 }
 
@@ -1854,10 +1853,11 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
         perspective: 200px;
     }
     .text-center {
-        margin-top: 80px;
-        text-align: center !important;
-    }
+    margin-top: 80px;
+    text-align: center !important;
+}
     .portfolio-section {
+        margin-top: 0px;
         justify-content: flex-start;
         transform: scale(0.1) translateZ(-800px);
         filter: blur(10px) brightness(0) contrast(2);
