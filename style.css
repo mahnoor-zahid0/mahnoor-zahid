@@ -1852,7 +1852,10 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     html {
         perspective: 200px;
     }
-    
+    .text-center {
+        margin-top: 80px;
+        text-align: center !important;
+    }
     .portfolio-section {
         justify-content: flex-start;
         transform: scale(0.1) translateZ(-800px);
@@ -1905,7 +1908,7 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
         padding: 15px 0;
         align-items: flex-start;
         justify-content: flex-start;
-        margin-top: 180px;
+        margin-top: 80px;
     }
     
     .section-content {
@@ -2031,7 +2034,7 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     }
     
     .portfolio-section .lead {
-        font-size: 0.65rem !important;
+        font-size: 0.85rem !important;
         margin-bottom: 0.5rem;
     }
     
@@ -2055,7 +2058,7 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     }
     
     .language-accordion-header span {
-        font-size: 0.65rem;
+        font-size: 0.85rem;
     }
     
     .language-accordion-header i {
