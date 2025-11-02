@@ -1619,20 +1619,20 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     }
     
     #home .section-content {
-        padding: 20px 0;
+        padding: 15px 0;
         align-items: flex-start;
         justify-content: flex-start;
-        margin-top: 80px;
+        margin-top: 0;
     }
     
     .section-content {
-        margin-top: 30px;
-        padding: 60px 0 20px 0;
+        margin-top: 0;
+        padding: 20px 0 10px 0;
     }
     
     #about .section-content {
-        margin-top: 15px;
-        padding: 60px 20px 20px 20px;
+        margin-top: 0;
+        padding: 20px 15px 10px 15px;
     }
     
     .display-4 {
@@ -1689,16 +1689,16 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     }
     
     .section-content {
-        padding: 80px 0 20px 0;
+        padding: 20px 0 10px 0;
     }
     
     #about .section-content {
-        padding: 80px 20px 20px 20px;
+        padding: 20px 15px 10px 15px;
         align-items: flex-start;
     }
     
     #contact .section-content {
-        padding-top: 80px;
+        padding: 20px 15px 10px 15px;
     }
     
     /* My CV responsive - mobile accordion styles */
