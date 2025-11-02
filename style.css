@@ -1910,7 +1910,6 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
         align-items: flex-start;
         justify-content: flex-start;
         margin-top: 0;
-        padding: 50px 15px 10px 15px;
     }
     
     .section-content {
@@ -1920,7 +1919,7 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     
     #about .section-content {
         margin-top: 0;
-        padding: 50px 15px 10px 15px;
+        padding: 20px 15px 10px 15px;
     }
     
     .display-4 {
