@@ -19,6 +19,10 @@ html {
     scroll-behavior: smooth;
     perspective: 1000px;
     perspective-origin: center center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
 }
 
 body {
@@ -26,6 +30,8 @@ body {
     background: var(--bg-darker);
     color: var(--text-light);
     overflow-x: hidden;
+    width: 100%;
+    height: 100%;
     transform-style: preserve-3d;
 }
 
@@ -71,6 +77,7 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     height: 100%;
     z-index: 1;
     pointer-events: none;
+    overflow: hidden;
 }
 
 .stars {
@@ -136,7 +143,7 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
         opacity: 0.6;
     }
     100% {
-        transform: translateY(-100px) translateX(50px);
+        transform: translateY(-20px) translateX(10px);
         opacity: 0.4;
     }
 }
@@ -208,6 +215,8 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-toggler-icon {
+    height: 2.0rem;
+    width: 1.5rem;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2863, 102, 241, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
@@ -403,12 +412,8 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     margin-top: 1rem !important;
 }
 
-.portfolio-section .g-4 {
-    --bs-gutter-y: 1rem;
-    --bs-gutter-x: 1rem;
-}
-
 .portfolio-section .lead {
+    font-size: 0.85rem !important;
     margin-bottom: 0.5rem;
 }
 
@@ -431,6 +436,12 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     margin-bottom: 0.5rem;
     text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+/* Override .lead font size for hero and contact sections */
+#home .portfolio-section .lead,
+#contact .portfolio-section .lead {
+    font-size: 1.2rem !important;
 }
 
 .hero-title {
@@ -479,13 +490,10 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
 }
 
 .portfolio-section p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.6;
-}
+} 
 
-.portfolio-section .lead {
-    font-size: 1.05rem !important;
-}
 
 .portfolio-section .display-4 {
     font-size: 2rem;
@@ -573,6 +581,15 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
 /* Animated Icon */
 .animated-icon {
     font-size: 8rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: float 3s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
+}
+
+.animated-icon-mobile {
+    font-size: 6rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -881,7 +898,7 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     border-top: 1px solid rgba(99, 102, 241, 0.2);
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.25rem;
     animation: fadeIn 0.3s ease-out;
 }
 
@@ -900,11 +917,13 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     background: rgba(99, 102, 241, 0.15);
     border: 1px solid rgba(99, 102, 241, 0.3);
     color: var(--text-light);
-    padding: 6px 12px;
+    padding: 4px 8px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.7rem;
     font-weight: 500;
     transition: all 0.3s ease;
+    flex: 1 1 auto;
+    text-align: center;
 }
 
 .sub-project-tag:hover {
@@ -919,7 +938,7 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(99, 102, 241, 0.2);
     border-radius: 20px;
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: center;
     transition: all 0.3s ease;
     transform-style: preserve-3d;
@@ -938,31 +957,31 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
 
 .project-image-main {
     width: 100%;
-    height: 250px;
+    height: 200px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .project-image-main i {
-    font-size: 5rem;
+    font-size: 4rem;
     color: white;
 }
 
 .project-card-main h3 {
     color: var(--text-light);
-    margin-bottom: 1rem;
-    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
 .project-card-main p {
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
 }
 
 /* Project Thumbnails */
@@ -996,7 +1015,7 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
 
 .project-image-thumb {
     width: 100%;
-    height: 120px;
+    height: 30px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 13px;
     display: flex;
@@ -1005,7 +1024,7 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
 }
 
 .project-image-thumb i {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: white;
 }
 
@@ -1210,13 +1229,14 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(99, 102, 241, 0.2);
     border-radius: 15px;
-    padding: 1rem;
+    padding: 0.5rem;
     transition: all 0.3s ease, transform 0.6s ease, opacity 0.6s ease;
     opacity: 0;
     transform: scale(0.9);
     display: block;
     text-decoration: none;
     color: inherit;
+    margin-bottom: 0;
 }
 
 .contact-box.animate-in {
@@ -1233,7 +1253,7 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
 }
 
 .contact-box i {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1244,18 +1264,18 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
 .contact-box h5 {
     color: var(--text-light);
     margin-bottom: 0.5rem;
-    font-size: 1rem;
+    font-size: 0.85rem;
 }
 
 .contact-box p {
     color: rgba(255, 255, 255, 0.7);
     margin: 0;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
 }
 
 /* Contact Form */
 .contact-form {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
@@ -1264,7 +1284,8 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     border: 1px solid rgba(99, 102, 241, 0.2);
     color: var(--text-light);
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px;
+    font-size: 0.9rem;
 }
 
 .contact-form .form-control:focus {
@@ -1473,6 +1494,7 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     }
     
     .portfolio-section.active {
+        
         filter: blur(0px) brightness(1) contrast(1);
     }
     
@@ -1572,6 +1594,10 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
         font-size: 5rem;
     }
     
+    .animated-icon-mobile {
+        font-size: 4rem;
+    }
+    
     .animated-icon-left {
         font-size: 3rem;
     }
@@ -1592,16 +1618,46 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
         width: 70%;
     }
     
+    #home .section-content {
+        padding: 20px 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 80px;
+    }
+    
+    .section-content {
+        margin-top: 30px;
+        padding: 60px 0 20px 0;
+    }
+    
+    #about .section-content {
+        margin-top: 15px;
+        padding: 60px 20px 20px 20px;
+    }
+    
     .display-4 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     
     .display-3 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
     
     .lead {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
+    }
+    
+    #home .btn-lg {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+    }
+    
+    .hero-name {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
     }
     
     .hero-subtitle {
@@ -1821,6 +1877,10 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
         font-size: 4rem;
     }
     
+    .animated-icon-mobile {
+        font-size: 3rem;
+    }
+    
     .animated-icon-left {
         font-size: 2.5rem;
     }
@@ -1841,20 +1901,80 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
         width: 60%;
     }
     
+    #home .section-content {
+        padding: 15px 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 180px;
+    }
+    
+    .section-content {
+        margin-top: 30px;
+        padding: 50px 0 15px 0;
+    }
+    
+    #about .section-content {
+        margin-top: 20px;
+        padding: 50px 15px 15px 15px;
+    }
+    
     .display-4 {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
     
     .display-3 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     
     .lead {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
+    }
+    
+    #home .btn-lg {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+        margin: 5px;
+    }
+    
+    .hero-name {
+        font-size: 1.75rem;
     }
     
     .hero-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .section-title {
+        font-size: 1rem;
+    }
+    
+    .project-card, .skill-card, .about-card, .cv-lang-container {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    #skills .col-md-4,
+    #skills .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    #cv .col-md-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    .cv-download-box,
+    .contact-form,
+    .project-card,
+    .skill-box,
+    .about-card {
         font-size: 0.9rem;
+    }
+    
+    .cv-download-box h3,
+    .section-title {
+        font-size: 1.5rem;
     }
     
     .hero-title {
@@ -1867,10 +1987,6 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     
     .cloud {
         opacity: 0.25;
-    }
-    
-    .hero-name {
-        font-size: 2rem;
     }
     
     .moonlight-gradient {
@@ -1891,51 +2007,73 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     }
     
     #contact .section-content {
-        padding-top: 70px;
+        padding: 70px 15px 15px 15px;
+    }
+    
+    /* Contact section responsive */
+    #contact .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    #contact .lead {
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
     }
     
     /* My CV responsive - mobile accordion styles */
     .mobile-languages-container {
-        padding: 1rem;
+        padding: 0.75rem;
     }
     
     .cv-download-box {
-        padding: 1.5rem;
+        padding: 1rem;
     }
     
+    .portfolio-section .lead {
+        font-size: 0.65rem !important;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Override .lead font size for hero and contact sections on mobile */
+    #home .portfolio-section .lead,
+    #contact .portfolio-section .lead {
+        font-size: 0.85rem !important;
+    }
     .cv-icon {
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
     }
     
     .cv-icon i {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
     
     .language-accordion-header {
-        font-size: 0.7rem;
-        padding: 0.625rem 0.5rem;
+        font-size: 0.65rem;
+        padding: 0.5rem 0.4rem;
     }
     
     .language-accordion-header span {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
     
     .language-accordion-header i {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
     
     .language-accordion-content {
-        padding: 0 0.5rem;
+        margin-top: 0;
+        padding: 0 0.4rem;
     }
     
     .language-accordion-content.active {
-        padding: 0.625rem;
+        padding: 0.5rem;
     }
     
     .language-accordion-content .language-badge {
-        font-size: 0.65rem;
-        padding: 4px 10px;
+        font-size: 0.6rem;
+        padding: 3px 8px;
     }
     
     /* Home section buttons */
@@ -1965,7 +2103,7 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     }
     
     .project-card-main p {
-        font-size: 0.9rem;
+        font-size: 0.6rem;
     }
     
     .project-image-main {
@@ -1986,19 +2124,23 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     
     /* Contact section - icons are already after form in HTML */
     #contact .row.g-4 {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         flex-direction: row;
         justify-content: center;
+        --bs-gutter-x: 0.1rem;
+        --bs-gutter-y: 0.1rem;
     }
     
     #contact .col-4 {
         flex: 0 0 auto;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
     }
     
     #contact .contact-box {
-        padding: 0.5rem;
-        width: 60px;
-        height: 60px;
+        padding: 0.3rem;
+        width: 40px;
+        height: 40px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -2008,13 +2150,23 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     }
     
     #contact .contact-box i {
-        font-size: 1.5rem;
+        font-size: 1rem;
         margin-bottom: 0;
     }
     
     #contact .contact-box h5,
     #contact .contact-box p {
         display: none;
+    }
+    
+    /* Contact form responsive */
+    .contact-form .form-control {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+    
+    .contact-form textarea.form-control {
+        min-height: 100px;
     }
     
     .btn-lg {
@@ -2028,6 +2180,10 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     
     .skill-box h5 {
         font-size: 0.85rem;
+    }
+    
+    .project-image-main {
+        height: 100px;
     }
     
     .navbar-nav .nav-link {

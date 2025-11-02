@@ -489,9 +489,9 @@ document.querySelectorAll('.project-thumbnail').forEach((thumbnail, index) => {
         document.getElementById('main-title').textContent = project.title;
         document.getElementById('main-description').textContent = project.description;
         
-        // Update tech badges
+        // Hide tech badges on mobile (sub-projects tags will show instead)
         const techContainer = document.getElementById('main-tech');
-        techContainer.innerHTML = project.tech.map(tech => `<span class="badge">${tech}</span>`).join('');
+        techContainer.style.display = 'none';
         
         // Update sub-projects tags for mobile
         const subProjectsContainer = document.getElementById('main-sub-projects');
