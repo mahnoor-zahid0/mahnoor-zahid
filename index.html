@@ -3,123 +3,824 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahnoor Zahid</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Arial:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <title>3D Portfolio - Mahnoor Zahid</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="intro-section fade-in-section">
-        <nav>
-            <!-- Profile Picture -->
-            <img src="profile.jpeg" alt="Mahnoor Zahid" class="profile-pic-nav">
-            <!-- Navigation Links -->
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="intro-content">
-            <h1>Hello, I'm Mahnoor Zahid</h1>
-            <p>Web & Mobile App Developer | Flutter Developer</p>
-            <a class="btn-primary" href="#projects">See My Work</a>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="about-section fade-in-section">
-        <h2>About Me</h2>
-        <!-- Static gradient text -->
-        <p class="gradient-text">I am a passionate web and Flutter development enthusiast, ready to launch my career in the tech industry. Through hands-on learning and personal projects, I have gained proficiency in creating responsive websites and mobile applications.</p>
-        <!-- Typing effect text -->
-        <p id="typing-text"></p>
-        <img src="profile.jpeg" alt="Mahnoor Zahid" class="profile-pic">
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section fade-in-section">
-        <h2>My Projects</h2>
-        <div class="projects-container">
-            <!-- Final Year Project -->
-            <div class="project-card">
-                <img src="project.jpeg" alt="ARCove FYP Project">
-                <h3>ARCove: Augmented Reality Home Design App</h3>
-                <p>ARCove is an AR-based mobile application designed to visualize interior and exterior home designs in real-time. It allows users to chat with professionals, use AR to place furniture, and explore professional design profiles.</p>
-                <ul>
-                    <li>AR Integration for real-time visualization</li>
-                    <li>Professional-Client Messaging</li>
-                    <li>Instagram-like professional profiles for designers</li>
-                    <li>Interactive 3D models for home decor</li>
-                </ul>
-            </div>
-
-            <!-- Graphic Design Project -->
-            <div class="project-card">
-                <img src="LOGO.jpeg" alt="Graphic Design Project">
-                <h3>Graphic Design Portfolio</h3>
-                <p>Showcasing my creativity through digital design. This project includes logo design, social media banners, and brand identity work that highlights my skills in visual communication.</p>
-                <ul>
-                    <li>Logo Design</li>
-                    <li>Social Media Graphics</li>
-                    <li>Brand Identity & Packaging</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- How I Can Help Section -->
-    <section class="how-i-can-help-section">
-        <h2>How I Can Help</h2>
-        <div class="help-container">
-            <div class="help-card">
-                <h3>Web Development</h3>
-                <p>Clean, responsive, and user-friendly web designs.</p>
-            </div>
-            <div class="help-card">
-                <h3>Mobile Apps</h3>
-                <p>Building beautiful mobile apps with Flutter.</p>
-            </div>
-            <div class="help-card">
-                <h3>UI/UX Design</h3>
-                <p>Creating experiences that users love.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section fade-in-section">
-        <h2>Skills</h2>
-        <ul>
-            <li><strong>Web Development:</strong> HTML, CSS, Bootstrap, JavaScript</li>
-            <li><strong>Flutter App Development:</strong> Dart Programming</li>
-            <li><strong>Responsive Design:</strong> Bootstrap, RESTful APIs, JSON</li>
-            <li><strong>Software Tools:</strong> Visual Studio Code, Android Studio</li>
-            <li><strong>Soft Skills:</strong> Problem-solving, communication, teamwork, adaptability</li>
-        </ul>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section fade-in-section">
-        <h2>Contact Me</h2>
-        <ul class="contact-details">
-            <li><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> +923167947578</li>
-            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> mmaahh1296@gmail.com</li>
-            <li><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://instagram.com/_.moonlight_00" target="_blank">_.moonlight_00</a></li>
-            <li><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mahnoor-zahid-22a75a264/" target="_blank">Mahnoor Zahid</a></li>
-            <li><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Mandi Bahauddin, Pakistan</li>
-        </ul>
-    </section>
     
-    <!-- Footer Section -->
-    <footer>
-        <p>Contact: mmaahh1296@gmail.com | &copy; 2024 Mahnoor Zahid</p>
-    </footer>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="assets/pp.png" alt="MZ Logo" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mycv">My CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <!-- JavaScript for Typing Effect -->
+    <!-- Main Container -->
+    <div id="main-container">
+        
+        <!-- Home Section -->
+        <section id="home" class="portfolio-section">
+            <div class="section-content">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 d-flex align-items-center">
+                            <div>
+                                <h1 class="display-4 fw-bold animate-text">Hello, I'm</h1>
+                                <h2 class="hero-name animate-text-delay">Mahnoor Zahid</h2>
+                                <p class="lead animate-text-delay-2">Web & Flutter Developer</p>
+                                <div class="mt-4 animate-text-delay-3">
+                                    <a href="#projects" class="btn btn-primary btn-lg me-3">View Work</a>
+                                    <a href="#contact" class="btn btn-outline-light btn-lg">Contact Me</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-center">
+                            <div class="animated-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="portfolio-section">
+            <div class="section-content">
+                <div class="container">
+                    <!-- Desktop Layout (lg and above) -->
+                    <div class="row align-items-start d-none d-lg-flex">
+                        <div class="col-lg-6">
+                            <h2 class="section-title">About Me</h2>
+                            <p class="lead">I'm a passionate and results-driven Web and Flutter Developer with a
+                                 strong foundation in creating responsive and user-friendly
+                                  websites and mobile applications.</p> 
+                            <div class="mt-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-map-marker-alt me-3"></i>
+                                    <span>Mandi Bahauddin, Pakistan</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-envelope me-3"></i>
+                                    <span>mmaahh1296@gmail.com</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-phone me-3"></i>
+                                    <span>+923167947578</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="skill-card">
+                                <h5 class="mb-3">Experience</h5>
+                                <div class="progress-item mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Web Application Development</span>
+                                        <span>95%</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Mobile Application Development</span>
+                                        <span>90%</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Backend</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Layout (below lg) -->
+                    <div class="d-lg-none">
+                        <h2 class="section-title">About Me</h2>
+                        <p class="lead">I'm a passionate and results-driven Web and Flutter Developer with a strong foundation in creating responsive and user-friendly websites and mobile applications.</p>
+                        
+                        <div class="skill-card mb-4 mt-4">
+                            <h5 class="mb-3">Experience</h5>
+                            <div class="progress-item mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Web Application Development</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Mobile Application Development</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Backend</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-map-marker-alt me-3"></i>
+                                <span>Mandi Bahauddin, Pakistan</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-envelope me-3"></i>
+                                <span>mmaahh1296@gmail.com</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-phone me-3"></i>
+                                <span>+923167947578</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="portfolio-section">
+            <div class="section-content">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <h2 class="section-title text-center mb-5">Skills & Technologies</h2>
+                            <div class="row g-4">
+                                <div class="col-lg col-md-4 col-sm-6">
+                                    <div class="skill-box">
+                                        <i class="fab fa-html5"></i>
+                                        <h5>HTML5</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg col-md-4 col-sm-6">
+                                    <div class="skill-box">
+                                        <i class="fab fa-css3-alt"></i>
+                                        <h5>CSS3</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg col-md-4 col-sm-6">
+                                    <div class="skill-box">
+                                        <i class="fab fa-js"></i>
+                                        <h5>JavaScript</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg col-md-4 col-sm-6">
+                                    <div class="skill-box">
+                                        <i class="fab fa-react"></i>
+                                        <h5>React</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg col-md-4 col-sm-6">
+                                    <div class="skill-box">
+                                        <i class="fab fa-node"></i>
+                                        <h5>Node.js</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg col-md-4 col-sm-6">
+                                    <div class="skill-box">
+                                        <i class="fab fa-python"></i>
+                                        <h5>Python</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg col-md-4 col-sm-6">
+                                    <div class="skill-box">
+                                        <i class="fab fa-git-alt"></i>
+                                        <h5>Git</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg col-md-4 col-sm-6">
+                                    <div class="skill-box">
+                                        <i class="fas fa-cube"></i>
+                                        <h5>Three.js</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg col-md-4 col-sm-6">
+                                    <div class="skill-box">
+                                        <i class="fab fa-firefox-browser"></i>
+                                        <h5>Flutter</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg col-md-4 col-sm-6">
+                                    <div class="skill-box">
+                                        <i class="fas fa-fire"></i>
+                                        <h5>Firebase/ MY SQL</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="portfolio-section">
+            <div class="section-content">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <h2 class="section-title text-center mb-5">Featured Projects</h2>
+                            
+                            <!-- Desktop Layout (4 projects in row) -->
+                            <div class="d-none d-lg-block">
+                                <!-- Main Projects Row -->
+                                <div class="row g-4">
+                                    <div class="col-md-3">
+                                        <div class="project-card" data-project-index="0">
+                                            <div class="project-image">
+                                                <i class="fas fa-globe"></i>
+                                            </div>
+                                            <h4>E-Commerce Platform</h4>
+                                            <p>Full-stack e-commerce solution with payment integration</p>
+                                            <div class="project-tech">
+                                                <span class="badge">React</span>
+                                                <span class="badge">Node.js</span>
+                                                <span class="badge">Firebase</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="project-card" data-project-index="1">
+                                            <div class="project-image">
+                                                <i class="fas fa-mobile-alt"></i>
+                                            </div>
+                                            <h4>Mobile App</h4>
+                                            <p>Cross-platform mobile application</p>
+                                            <div class="project-tech">
+                                                <span class="badge">Flutter</span>
+                                                <span class="badge">Firebase</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="project-card" data-project-index="2">
+                                            <div class="project-image">
+                                                <i class="fas fa-cube"></i>
+                                            </div>
+                                            <h4>3D Portfolio</h4>
+                                            <p>Interactive 3D portfolio website</p>
+                                            <div class="project-tech">
+                                                <span class="badge">Three.js</span>
+                                                <span class="badge">WebGL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="project-card" data-project-index="3">
+                                            <div class="project-image">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <h4>Analytics Dashboard</h4>
+                                            <p>Real-time data visualization dashboard</p>
+                                            <div class="project-tech">
+                                                <span class="badge">D3.js</span>
+                                                <span class="badge">Python</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Sub-projects containers -->
+                                <div class="sub-projects-container" data-sub-projects="0" style="display: none;">
+                                    <div class="row g-4 mt-3">
+                                        <div class="col-md-4">
+                                            <div class="sub-project-card">
+                                                <div class="sub-project-image">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </div>
+                                                <h5>Product Catalog</h5>
+                                                <p>Browse and filter products</p>
+                                                <div class="project-tech">
+                                                    <span class="badge">React</span>
+                                                    <span class="badge">Redux</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="sub-project-card">
+                                                <div class="sub-project-image">
+                                                    <i class="fas fa-credit-card"></i>
+                                                </div>
+                                                <h5>Payment Gateway</h5>
+                                                <p>Secure payment processing</p>
+                                                <div class="project-tech">
+                                                    <span class="badge">Stripe API</span>
+                                                    <span class="badge">Node.js</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="sub-project-card">
+                                                <div class="sub-project-image">
+                                                    <i class="fas fa-user-circle"></i>
+                                                </div>
+                                                <h5>User Dashboard</h5>
+                                                <p>Manage orders and profile</p>
+                                                <div class="project-tech">
+                                                    <span class="badge">React</span>
+                                                    <span class="badge">Firebase</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-projects-container" data-sub-projects="1" style="display: none;">
+                                    <div class="row g-4 mt-3">
+                                        <div class="col-md-4">
+                                            <div class="sub-project-card">
+                                                <div class="sub-project-image">
+                                                    <i class="fas fa-cube"></i>
+                                                </div>
+                                                <h5>AR Furniture</h5>
+                                                <p>AR-based home design</p>
+                                                <div class="project-tech">
+                                                    <span class="badge">Flutter</span>
+                                                    <span class="badge">ARCore</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="sub-project-card">
+                                                <div class="sub-project-image">
+                                                    <i class="fas fa-home"></i>
+                                                </div>
+                                                <h5>Property Listing</h5>
+                                                <p>Real estate with AR preview</p>
+                                                <div class="project-tech">
+                                                    <span class="badge">Flutter</span>
+                                                    <span class="badge">Firebase</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="sub-project-card">
+                                                <div class="sub-project-image">
+                                                    <i class="fas fa-user-friends"></i>
+                                                </div>
+                                                <h5>Social Features</h5>
+                                                <p>Share designs and connect</p>
+                                                <div class="project-tech">
+                                                    <span class="badge">Flutter</span>
+                                                    <span class="badge">Firebase</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-projects-container" data-sub-projects="2" style="display: none;">
+                                    <div class="row g-4 mt-3">
+                                        <div class="col-md-4">
+                                            <div class="sub-project-card">
+                                                <div class="sub-project-image">
+                                                    <i class="fas fa-globe-americas"></i>
+                                                </div>
+                                                <h5>3D Globe</h5>
+                                                <p>Interactive world map</p>
+                                                <div class="project-tech">
+                                                    <span class="badge">Three.js</span>
+                                                    <span class="badge">GSAP</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="sub-project-card">
+                                                <div class="sub-project-image">
+                                                    <i class="fas fa-gem"></i>
+                                                </div>
+                                                <h5>Particle Effects</h5>
+                                                <p>Stunning visual effects</p>
+                                                <div class="project-tech">
+                                                    <span class="badge">Three.js</span>
+                                                    <span class="badge">Shader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="sub-project-card">
+                                                <div class="sub-project-image">
+                                                    <i class="fas fa-layer-group"></i>
+                                                </div>
+                                                <h5>Scene Transitions</h5>
+                                                <p>Smooth section navigation</p>
+                                                <div class="project-tech">
+                                                    <span class="badge">WebGL</span>
+                                                    <span class="badge">GSAP</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-projects-container" data-sub-projects="3" style="display: none;">
+                                    <div class="row g-4 mt-3">
+                                        <div class="col-md-4">
+                                            <div class="sub-project-card">
+                                                <div class="sub-project-image">
+                                                    <i class="fas fa-chart-bar"></i>
+                                                </div>
+                                                <h5>Charts & Graphs</h5>
+                                                <p>Data visualization</p>
+                                                <div class="project-tech">
+                                                    <span class="badge">D3.js</span>
+                                                    <span class="badge">Chart.js</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="sub-project-card">
+                                                <div class="sub-project-image">
+                                                    <i class="fas fa-bolt"></i>
+                                                </div>
+                                                <h5>Real-time Updates</h5>
+                                                <p>Live data streaming</p>
+                                                <div class="project-tech">
+                                                    <span class="badge">WebSocket</span>
+                                                    <span class="badge">Python</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="sub-project-card">
+                                                <div class="sub-project-image">
+                                                    <i class="fas fa-file-export"></i>
+                                                </div>
+                                                <h5>Export Reports</h5>
+                                                <p>Generate PDF/CSV reports</p>
+                                                <div class="project-tech">
+                                                    <span class="badge">Python</span>
+                                                    <span class="badge">PDFKit</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Mobile Layout (Main + Thumbnails) -->
+                            <div class="d-lg-none">
+                                <!-- Main Project Display Row -->
+                                <div class="row mb-4">
+                                    <div class="col-12">
+                                        <div class="project-card-main" id="main-project">
+                                            <div class="project-image-main">
+                                                <i class="fas fa-globe" id="main-icon"></i>
+                                            </div>
+                                            <h3 id="main-title">E-Commerce Platform</h3>
+                                            <p id="main-description">Full-stack e-commerce solution with payment integration</p>
+                                            <div class="project-tech" id="main-tech">
+                                                <span class="badge">React</span>
+                                                <span class="badge">Node.js</span>
+                                                <span class="badge">Firebase</span>
+                                            </div>
+                                            <!-- Sub-projects tags -->
+                                            <div class="sub-projects-tags" id="main-sub-projects" style="display: none;">
+                                                <span class="sub-project-tag">Product Catalog</span>
+                                                <span class="sub-project-tag">Payment Gateway</span>
+                                                <span class="sub-project-tag">User Dashboard</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Thumbnail Projects Row -->
+                                <div class="row g-3">
+                                    <div class="col-4">
+                                        <div class="project-thumbnail active" data-index="0">
+                                            <div class="project-image-thumb">
+                                                <i class="fas fa-globe"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="project-thumbnail" data-index="1">
+                                            <div class="project-image-thumb">
+                                                <i class="fas fa-mobile-alt"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="project-thumbnail" data-index="2">
+                                            <div class="project-image-thumb">
+                                                <i class="fas fa-cube"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My CV Section -->
+        <section id="mycv" class="portfolio-section">
+            <div class="section-content">
+                <div class="container">
+                    <h2 class="section-title text-center mb-5">My CV</h2>
+                    
+                    <!-- Desktop Layout (lg and above) -->
+                    <div class="row align-items-center d-none d-lg-flex">
+                        <!-- Languages Side -->
+                        <div class="col-lg-6">
+                            <div class="languages-container">
+                                <h4 class="mb-4">Languages</h4>
+                                <div class="language-group mb-3">
+                                    <h5>Spoken Languages</h5>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="language-badge">English (Intermediate)</span>
+                                        <span class="language-badge">Urdu (Native)</span>
+                                    </div>
+                                </div>
+                                <div class="language-group mb-3">
+                                    <h5>Programming Languages</h5>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="language-badge">JavaScript</span>
+                                        <span class="language-badge">Python</span>
+                                        <span class="language-badge">Java</span>
+                                        <span class="language-badge">C++</span>
+                                    </div>
+                                </div>
+                                <div class="language-group">
+                                    <h5>Frameworks & Technologies</h5>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="language-badge">React</span>
+                                        <span class="language-badge">Node.js</span>
+                                        <span class="language-badge">Flutter</span>
+                                        <span class="language-badge">Dart</span>
+                                        <span class="language-badge">Firebase</span>
+                                        <span class="language-badge">ARCore</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CV Download Side -->
+                        <div class="col-lg-6 text-center">
+                            <div class="cv-download-box">
+                                <div class="cv-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <h3 class="mt-4 mb-3">My CV</h3>
+                                <p class="lead mb-4">Get a detailed overview of my skills and experience</p>
+                                <div>
+                                    <a href="assets/MahnoorZahid.pdf" target="_blank" class="btn btn-secondary btn-lg me-3">
+                                        <i class="fas fa-eye me-2"></i>View My CV
+                                    </a>
+                                    <a href="assets/MahnoorZahid.pdf" class="btn btn-outline-secondary btn-lg" download>
+                                        <i class="fas fa-download me-2"></i>Download
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Layout (below lg) -->
+                    <div class="d-lg-none">
+                        <!-- Languages Section -->
+                        <div class="mobile-languages-container mb-4">
+                            <h4 class="mb-4">Languages</h4>
+                            
+                            <!-- Languages in 3 columns -->
+                            <div class="language-accordion-wrapper">
+                                <div class="row g-3">
+                                    <!-- Spoken Languages -->
+                                    <div class="col-4">
+                                        <button class="language-accordion-header" onclick="toggleLanguageAccordion(this, 'spoken')">
+                                            <span>Spoken</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    
+                                    <!-- Programming Languages -->
+                                    <div class="col-4">
+                                        <button class="language-accordion-header" onclick="toggleLanguageAccordion(this, 'programming')">
+                                            <span>Programming</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    
+                                    <!-- Framework Languages -->
+                                    <div class="col-4">
+                                        <button class="language-accordion-header" onclick="toggleLanguageAccordion(this, 'frameworks')">
+                                            <span>Frameworks</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Spoken Languages Content -->
+                                <div class="language-accordion-content" data-type="spoken">
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <span class="language-badge d-block text-center">English (Intermediate)</span>
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="language-badge d-block text-center">Urdu (Native)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Programming Languages Content -->
+                                <div class="language-accordion-content" data-type="programming">
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <span class="language-badge d-block text-center">JavaScript</span>
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="language-badge d-block text-center">Python</span>
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="language-badge d-block text-center">Java</span>
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="language-badge d-block text-center">C++</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Framework Languages Content -->
+                                <div class="language-accordion-content" data-type="frameworks">
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <span class="language-badge d-block text-center">React</span>
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="language-badge d-block text-center">Node.js</span>
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="language-badge d-block text-center">Flutter</span>
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="language-badge d-block text-center">Dart</span>
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="language-badge d-block text-center">Firebase</span>
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="language-badge d-block text-center">ARCore</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CV Download Section -->
+                        <div class="text-center">
+                            <div class="cv-download-box">
+                                <div class="cv-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <h3 class="mt-4 mb-3">My CV</h3>
+                                <p class="lead mb-4">Get a detailed overview of my skills and experience</p>
+                                <div>
+                                    <a href="assets/MahnoorZahid.pdf" target="_blank" class="btn btn-secondary btn-lg me-3">
+                                        <i class="fas fa-eye me-2"></i>View My CV
+                                    </a>
+                                    <a href="assets/MahnoorZahid.pdf" class="btn btn-outline-secondary btn-lg" download>
+                                        <i class="fas fa-download me-2"></i>Download
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="portfolio-section">
+            <div class="section-content">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 mx-auto text-center">
+                            <h2 class="section-title mb-4">Get In Touch</h2>
+                            <p class="lead mb-5">I'm always open to discussing new projects and opportunities.</p>
+                            <form class="contact-form mb-5">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" placeholder="Your Name">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="email" class="form-control" placeholder="Your Email">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                            </form>
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-md-4 col-4">
+                                    <a href="mailto:mmaahh1296@gmail.com" class="contact-box">
+                                        <i class="fas fa-envelope"></i>
+                                        <h5>Email</h5>
+                                        <p>mmaahh1296@gmail.com</p>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-4">
+                                    <a href="tel:+923167947578" class="contact-box">
+                                        <i class="fas fa-phone"></i>
+                                        <h5>Phone</h5>
+                                        <p>+92 316 7947578</p>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-4">
+                                    <a href="https://github.com/yourusername" target="_blank" class="contact-box">
+                                        <i class="fab fa-github"></i>
+                                        <h5>GitHub</h5>
+                                        <p>github.com/yourusername</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Moonlight Effect -->
+    <div class="moonlight-gradient"></div>
+
+    <!-- Stars Background -->
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <!-- 3D Background Canvas -->
+    <canvas id="canvas3d"></canvas>
+
+    <!-- Code Transition Overlay -->
+    <div id="code-transition" class="code-transition">
+        <div class="code-lines"></div>
+    </div>
+
+    <!-- Scroll Indicators -->
+    <div class="scroll-indicator">
+        <div class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 </html>
+
+
+</html>
+
+
+
