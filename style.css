@@ -1856,7 +1856,6 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
         perspective: 200px;
     }
     .text-center {
-    margin-top: 0;
     text-align: center !important;
 }
     .portfolio-section {
