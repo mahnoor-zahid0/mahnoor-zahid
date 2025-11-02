@@ -446,6 +446,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (aboutSection) {
         aboutObserver.observe(aboutSection);
     }
+    
+    // Handle navigation links from home buttons
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                const targetId = href.substring(1);
+                
+                // Find the section with this ID and get its index
+                sections.forEach((section, index) => {
+                    if (section.id === targetId) {
+                        e.preventDefault();
+                        scrollToSection(index);
+                    }
+                });
+            }
+        });
+    });
 });
 
 // Smooth scroll indicator click
