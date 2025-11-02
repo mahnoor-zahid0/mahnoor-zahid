@@ -1489,6 +1489,8 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     }
     
     .portfolio-section {
+        height: auto;
+        position: relative;
         transform: scale(0.1) translateZ(-1500px);
         filter: blur(20px) brightness(0) contrast(2);
     }
@@ -1571,6 +1573,8 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     }
     
     .portfolio-section {
+        height: auto;
+        position: relative;
         justify-content: flex-start;
         transform: scale(0.1) translateZ(-1000px);
         filter: blur(15px) brightness(0) contrast(2);
@@ -1859,6 +1863,8 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     text-align: center !important;
 }
     .portfolio-section {
+        height: auto;
+        position: relative;
         margin-top: 0px;
         justify-content: flex-start;
         transform: scale(0.1) translateZ(-800px);
