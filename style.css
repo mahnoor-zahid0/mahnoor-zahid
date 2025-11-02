@@ -1622,16 +1622,16 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
         padding: 15px 0;
         align-items: flex-start;
         justify-content: flex-start;
-        margin-top: 0;
+        margin-top: 70px;
     }
     
     .section-content {
-        margin-top: 0;
+        margin-top: 70px;
         padding: 20px 0 10px 0;
     }
     
     #about .section-content {
-        margin-top: 0;
+        margin-top: 70px;
         padding: 20px 15px 10px 15px;
     }
     
@@ -1689,15 +1689,18 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     }
     
     .section-content {
+        margin-top: 70px;
         padding: 20px 0 10px 0;
     }
     
     #about .section-content {
+        margin-top: 70px;
         padding: 20px 15px 10px 15px;
         align-items: flex-start;
     }
     
     #contact .section-content {
+        margin-top: 70px;
         padding: 20px 15px 10px 15px;
     }
     
@@ -1909,16 +1912,16 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
         padding: 15px 0;
         align-items: flex-start;
         justify-content: flex-start;
-        margin-top: 0;
+        margin-top: 70px;
     }
     
     .section-content {
-        margin-top: 0;
+        margin-top: 70px;
         padding: 20px 0 10px 0;
     }
     
     #about .section-content {
-        margin-top: 0;
+        margin-top: 70px;
         padding: 20px 15px 10px 15px;
     }
     
@@ -2002,15 +2005,18 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
     }
     
     .section-content {
+        margin-top: 70px;
         padding: 20px 0 10px 0;
     }
     
     #about .section-content {
+        margin-top: 70px;
         padding: 20px 15px 10px 15px;
         align-items: flex-start;
     }
     
     #contact .section-content {
+        margin-top: 70px;
         padding: 20px 15px 10px 15px;
     }
     
