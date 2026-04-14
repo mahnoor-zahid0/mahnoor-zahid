@@ -439,6 +439,38 @@ document.addEventListener('DOMContentLoaded', () => {
     init3D();
     updateNavbar(0);
     
+    // Initialize EmailJS
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init("BcxA0v2iawUbD5Yru");
+    }
+
+    // Handle Contact Form Submission
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            emailjs.sendForm('service_yuxtor9', 'template_fal7zka', this)
+                .then(() => {
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+                }, (error) => {
+                    alert('Failed to send message: ' + JSON.stringify(error));
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                });
+        });
+    }
+
     // Activate first section
     sections[0].classList.add('active');
     
