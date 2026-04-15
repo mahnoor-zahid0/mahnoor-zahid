@@ -1,0 +1,9 @@
+{
+  "name": "mahnoor-zahid-portfolio",
+  "version": "1.0.0",
+  "description": "3D Interactive Portfolio",
+  "scripts": {
+    "build": "sed -i \"s/INSERT_GEMINI_API_KEY_HERE/\$GEMINI_API_KEY/g\" chat.js && sed -i \"s/INSERT_EMAILJS_PUBLIC_KEY_HERE/\$EMAILJS_PUBLIC_KEY/g\" script.js && sed -i \"s/INSERT_EMAILJS_SERVICE_ID_HERE/\$EMAILJS_SERVICE_ID/g\" script.js && sed -i \"s/INSERT_EMAILJS_TEMPLATE_ID_HERE/\$EMAILJS_TEMPLATE_ID/g\" script.js"
+  },
+  "dependencies": {}
+}

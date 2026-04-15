@@ -5,7 +5,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
  * Uses the Google Generative AI SDK to provide a live brain for the assistant.
  */
 
-const API_KEY = "AIzaSyA5rFNxd1yrqds2dwcm0BlwGJ3VOZ-NkFg";
+const API_KEY = "INSERT_GEMINI_API_KEY_HERE";
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 // System prompt to ground the AI in the portfolio context
