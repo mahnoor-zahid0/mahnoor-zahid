@@ -53,13 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatInput = document.getElementById('chat-input');
     const chatMessages = document.getElementById('chat-messages');
 
-    // Initialize Gemini Model
-    // Switching to gemini-pro (the most stable 1.0 version) to test connectivity
+    // Initialize Gemini Model - Bare Minimum Test
     const model = genAI.getGenerativeModel({ 
-        model: "gemini-pro"
+        model: "gemini-1.5-flash"
     });
 
-    console.log("DEBUG: Initializing chat with model: gemini-pro");
+    console.log("DEBUG: Testing with bare-minimum model: gemini-1.5-flash");
 
     // Optional: Diagnostic to see what models this key CAN see
     async function listAvailableModels() {
@@ -109,9 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const loadingId = addLoading();
 
         try {
-            if (!chat) throw new Error("Chat not initialized");
-            
-            const result = await chat.sendMessage(message);
+            // Simple direct request instead of chat history
+            const result = await model.generateContent(message);
             const response = await result.response;
             const text = response.text();
             
