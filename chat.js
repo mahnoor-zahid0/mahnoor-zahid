@@ -54,12 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatMessages = document.getElementById('chat-messages');
 
     // Initialize Gemini Model
+    // Try gemini-1.5-pro or gemini-1.5-flash
     const model = genAI.getGenerativeModel({ 
-        model: "gemini-1.5-flash",
+        model: "gemini-1.5-pro",
         systemInstruction: SYSTEM_PROMPT 
     });
 
-    console.log("DEBUG: Initializing chat with model: gemini-1.5-flash");
+    console.log("DEBUG: Initializing chat with model: gemini-1.5-pro");
 
     // Chat History for persistent conversation
     let chat = null;
