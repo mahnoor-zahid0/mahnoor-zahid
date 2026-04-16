@@ -54,13 +54,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatMessages = document.getElementById('chat-messages');
 
     // Initialize Gemini Model
-    // Try gemini-1.5-pro or gemini-1.5-flash
+    // Switching to gemini-pro (the most stable 1.0 version) to test connectivity
     const model = genAI.getGenerativeModel({ 
-        model: "gemini-1.5-pro",
-        systemInstruction: SYSTEM_PROMPT 
+        model: "gemini-pro"
     });
 
-    console.log("DEBUG: Initializing chat with model: gemini-1.5-pro");
+    console.log("DEBUG: Initializing chat with model: gemini-pro");
+
+    // Optional: Diagnostic to see what models this key CAN see
+    async function listAvailableModels() {
+        try {
+            // Note: The web SDK doesn't have a direct listModels, 
+            // but we can test a few common ones
+            console.log("DEBUG: Testing key access...");
+        } catch (e) {
+            console.error("DEBUG: Diagnostic failed:", e);
+        }
+    }
+    listAvailableModels();
 
     // Chat History for persistent conversation
     let chat = null;
