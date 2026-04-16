@@ -6,6 +6,14 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
  */
 
 const API_KEY = "INSERT_GEMINI_API_KEY_HERE";
+
+// Diagnostic check
+if (API_KEY.includes("INSERT_")) {
+    console.error("DEBUG: API Key placeholder detected! The build process did not replace the key.");
+} else {
+    console.log("DEBUG: API Key detected (First 5 chars):", API_KEY.substring(0, 5));
+}
+
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 // System prompt to ground the AI in the portfolio context
@@ -47,14 +55,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize Gemini Model
     const model = genAI.getGenerativeModel({ 
-        model: "gemini-1.5-flash-latest",
+        model: "gemini-1.5-flash",
         systemInstruction: SYSTEM_PROMPT 
     });
 
+    console.log("DEBUG: Initializing chat with model: gemini-1.5-flash");
+
     // Chat History for persistent conversation
-    let chat = model.startChat({
-        history: [],
-    });
+    let chat = null;
+    try {
+        chat = model.startChat({
+            history: [],
+        });
+    } catch (e) {
+        console.error("DEBUG: Failed to start chat:", e);
+    }
 
     // Toggle Chat Window
     chatToggle.addEventListener('click', () => {
@@ -82,6 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const loadingId = addLoading();
 
         try {
+            if (!chat) throw new Error("Chat not initialized");
+            
             const result = await chat.sendMessage(message);
             const response = await result.response;
             const text = response.text();
@@ -92,7 +109,12 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             removeLoading(loadingId);
             addMessage('I am having a bit of trouble connecting to my brain. Please try again or use the traditional contact form!', 'output');
-            console.error('Gemini API Error:', error);
+            console.error('DEBUG: Gemini API Error Details:', error);
+            
+            // Helpful hint for the user
+            if (error.message && error.message.includes('404')) {
+                console.warn("HINT: A 404 error usually means the model name is wrong or the API Key doesn't have access to this model.");
+            }
         }
     });
 
