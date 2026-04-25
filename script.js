@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize EmailJS
     if (typeof emailjs !== 'undefined') {
-        emailjs.init("INSERT_EMAILJS_PUBLIC_KEY_HERE");
+        emailjs.init("BcxA0v2iawUbD5Yru");
     }
 
     // Handle Contact Form Submission
@@ -457,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
             
-            emailjs.sendForm('INSERT_EMAILJS_SERVICE_ID_HERE', 'INSERT_EMAILJS_TEMPLATE_ID_HERE', this)
+            emailjs.sendForm('service_yuxtor9', 'template_fal7zka', this)
                 .then(() => {
                     alert('Message sent successfully!');
                     contactForm.reset();
