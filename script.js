@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize EmailJS
     if (typeof emailjs !== 'undefined') {
-        emailjs.init("BcxA0v2iawUbD5Yru");
+        emailjs.init("N0ptMHMMGVsSquHPA");
     }
 
     // Handle Contact Form Submission
